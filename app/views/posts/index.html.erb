@@ -1,9 +1,14 @@
 <h1>Members Only</h1>
 <h2>A secret place for secret people</h2>
 
+You are currently signed in as <%= @user.username %><br />
+
+<%= link_to "New Post", new_post_path %>
+
 <% @posts.each do |post| %>
     <div class="post-card">
         <h4><%= post.title %></h4>
+        By: <%= post.user.username %>
         <p><%= post.body %></p>
     </div>
 <% end %>

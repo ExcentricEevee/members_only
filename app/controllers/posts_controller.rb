@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
     def index
+        @user = current_user
         @posts = Post.all
     end
 
@@ -9,7 +10,7 @@ class PostsController < ApplicationController
     end
 
     def create
-        @post = Post.new(post_params)
+        @post = current_user.posts.new(post_params)
 
         if @post.save
             flash[:alert] = "Post successfully created!"
