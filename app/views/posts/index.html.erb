@@ -1,0 +1,9 @@
+<h1>Members Only</h1>
+<h2>A secret place for secret people</h2>
+
+<% @posts.each do |post| %>
+    <div class="post-card">
+        <h4><%= post.title %></h4>
+        <p><%= post.body %></p>
+    </div>
+<% end %>
